@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zone Warriors – Aakhri tak jo bache, wahi jeete</title>
+<meta name="description" content="Zone Warriors: free shooter game. Bots se ladte raho, laal zone se bacho, coins kamao aur monster skins kharido. Phone par seedha khelo.">
+<meta name="theme-color" content="#e53935">
+<meta property="og:title" content="Zone Warriors">
+<meta property="og:description" content="Kya aap 120 second zinda reh paoge? Free game, abhi khelo.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff6ee;--surface:#ffffff;--ink:#2a0f0f;--muted:#6e4f4a;--line:#f0d6cc;--red:#e53935;--amber:#ffb300;--btn:#e53935;--btn-ink:#fff;color-scheme:light;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#140808;--surface:#201010;--ink:#fff0ea;--muted:#caa8a0;--line:#3d2220;--red:#ff5252;--amber:#ffc43d;--btn:#ff5252;--btn-ink:#1a0505;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#140808;--surface:#201010;--ink:#fff0ea;--muted:#caa8a0;--line:#3d2220;--red:#ff5252;--amber:#ffc43d;--btn:#ff5252;--btn-ink:#1a0505;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 "Nunito Sans",system-ui,sans-serif}
+h1,h2,h3,.btn{font-family:"Baloo 2",system-ui,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:center;padding:36px 0 28px}
+@media (max-width:780px){.hero{grid-template-columns:1fr;text-align:center}.ctas{justify-content:center}}
+h1{font-size:clamp(44px,9vw,78px);line-height:1;margin:0;font-weight:800;background:linear-gradient(90deg,var(--red),var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{font:700 22px "Baloo 2",sans-serif;margin:10px 0 6px}
+.lead{color:var(--muted);max-width:30em;margin:0 auto 20px}
+@media (min-width:781px){.lead{margin-left:0}}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;text-decoration:none;font-weight:800;font-size:22px;padding:13px 34px;border-radius:14px;background:var(--btn);color:var(--btn-ink);box-shadow:0 5px 0 rgba(0,0,0,.25)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(0,0,0,.25)}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--ink);box-shadow:none}
+.btn:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.arena{position:relative;width:min(100%,330px);aspect-ratio:1;margin:0 auto;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--red) 10%,transparent),transparent 70%)}
+.ring{position:absolute;inset:0;border-radius:50%;border:4px solid var(--red);box-shadow:0 0 24px var(--red),inset 0 0 24px color-mix(in srgb,var(--red) 40%,transparent);animation:shrink 6s ease-in-out infinite alternate}
+@keyframes shrink{to{transform:scale(.55)}}
+@media (prefers-reduced-motion:reduce){.ring{animation:none;transform:scale(.8)}}
+.ball{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#64b5f6,#0d47a1);box-shadow:0 4px 8px rgba(0,0,0,.4);display:grid;place-items:center;font-size:22px}
+.bot{position:absolute;width:20px;height:20px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ff8a80,#b71c1c)}
+section{padding:30px 0}
+h2{font-size:32px;margin:0 0 16px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0;margin:0;list-style:none;counter-reset:s}
+@media (max-width:780px){.steps{grid-template-columns:1fr}}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px}
+.steps li::before{content:counter(s);display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--amber);color:#2a0f0f;font:800 17px "Baloo 2",sans-serif;margin-bottom:6px}
+.steps b{display:block;font:700 20px "Baloo 2",sans-serif}
+.steps span{color:var(--muted);font-size:15px}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media (max-width:620px){.feat{grid-template-columns:1fr}}
+.feat div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.feat b{font:700 19px "Baloo 2",sans-serif;display:block}
+.feat span{color:var(--muted);font-size:15px}
+.skins{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 12px}
+.sk{flex:none;width:84px;text-align:center;font:700 14px "Baloo 2",sans-serif}
+.sk i{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 4px;border-radius:50%;font-style:normal;font-size:28px;box-shadow:0 4px 8px rgba(0,0,0,.3)}
+.cta2{text-align:center;background:var(--surface);border:2px solid var(--amber);border-radius:18px;padding:26px 16px;margin:10px 0 30px}
+.cta2 h2{margin-bottom:6px}
+footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <h1>ZONE WARRIORS</h1>
+      <div class="tag">Aakhri tak jo bache, wahi jeete</div>
+      <p class="lead">Bots se ladte raho, laal zone se bacho, aur 120 second zinda raho. Coins kamao, monster skins kharido aur rank chadho. Seedha phone par khelo.</p>
+      <div class="ctas">
+        <a class="btn" id="play" href="#" target="_blank" rel="noopener">▶ Abhi khelo</a>
+        <a class="btn alt" id="share" href="#" target="_blank" rel="noopener">Dost ko bhejo</a>
+      </div>
+    </div>
+    <div class="arena" aria-hidden="true">
+      <div class="ring"></div>
+      <div class="bot" style="left:22%;top:30%"></div>
+      <div class="bot" style="left:68%;top:24%"></div>
+      <div class="bot" style="left:74%;top:66%"></div>
+      <div class="bot" style="left:28%;top:72%"></div>
+      <div class="ball">👹</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Kaise khelna hai</h2>
+    <ol class="steps">
+      <li><b>Ungli ghumao</b><span>Screen par ungli rakh kar ghumao, player us taraf chalta hai.</span></li>
+      <li><b>Fire apne aap</b><span>Paas wale bot par goli khud chalti hai. Aap bas bacho aur ghoomo.</span></li>
+      <li><b>Zone ke andar raho</b><span>Laal ghera chhota hota jata hai. Bahar jaoge to health ghategi.</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Game mein kya hai</h2>
+    <div class="feat">
+      <div><b>⚔️ Mushkil bots</b><span>Bade purple bots aur tez daudne wale dushman, jo waqt ke saath badhte hain.</span></div>
+      <div><b>🪙 Coins aur rank</b><span>Har kill par coin. Rookie se Legend tak rank badhao.</span></div>
+      <div><b>🔁 Wahin se dobara</b><span>Mar gaye to usi jagah se dobara shuru karo, 2 baar.</span></div>
+      <div><b>📱 Phone ke liye bana</b><span>Koi download nahi. Link kholo aur khelo.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>15 skins, aapke ball ke liye</h2>
+    <div class="skins" role="list">
+      <div class="sk" role="listitem"><i style="background:radial-gradient(circle at 35% 35%,#64b5f6,#0d47a1)"></i>Neela</div>
+      <div class="sk" role="listitem"><i style="background:radial-gradient(circle at 35% 35%,#ef9a9a,#b71c1c)">👹</i>Monster</div>
+      <div class="sk" role="listitem"><i style="background:radial-gradient(circle at 35% 35%,#ce93d8,#4a148c)">👾</i>Alien</div>
+      <div class="sk" role="listitem"><i style="background:radial-gradient(circle at 35% 35%,#eceff1,#455a64)">💀</i>Skeleton</div>
+      <div class="sk" role="listitem"><i style="background:radial-gradient(circle at 35% 35%,#c5e1a5,#33691e)">🧟</i>Zombie</div>
+      <div class="sk" role="listitem"><i style="background:radial-gradient(circle at 35% 35%,#80cbc4,#004d40)">🐲</i>Dragon</div>
+      <div class="sk" role="listitem"><i style="background:radial-gradient(circle at 35% 35%,#bcaaa4,#3e2723)">🐺</i>Bhediya</div>
+      <div class="sk" role="listitem"><i style="background:radial-gradient(circle at 35% 35%,#ff8a80,#4a0000)">😈</i>Shaitan</div>
+    </div>
+  </section>
+
+  <div class="cta2">
+    <h2>Kya aap 120 second bach paoge?</h2>
+    <p style="margin:0 0 16px;color:var(--muted)">Free hai. Abhi try karo.</p>
+    <a class="btn" id="play2" href="#" target="_blank" rel="noopener">▶ Abhi khelo</a>
+  </div>
+
+  <footer>© Zone Warriors. Coins aur skins sirf game ke andar ke hain, inki asli paise mein koi keemat nahi hai.</footer>
+</div>
+<script>
+// Game ka link yahan hai. Isse apne game ke link se badalna ho to yahi line badlo.
+var GAME="game.html";
+document.getElementById("play").href=GAME;
+document.getElementById("play2").href=GAME;
+var msg="Zone Warriors khelo! 🎯 Kya aap 120 second zinda reh paoge? "+new URL(GAME,location.href).href;
+document.getElementById("share").href="https://wa.me/?text="+encodeURIComponent(msg);
+</script>
+</body>
+</html>
